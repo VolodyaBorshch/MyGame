@@ -10,9 +10,9 @@ public class Player : MonoBehaviour
     //[SerializeField] private int moneyCount;
 
     //private Interaction previusInteraction;
-
+    public Selectible selected_obj;   
     // Update is called once per frame
-   void Update()
+    void Update()
     {
 
         RaycastHit hit;
@@ -20,8 +20,24 @@ public class Player : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 100))
         {
-            var interactable = hit.collider.GetComponent<Outline>();
-            interactable.OutlineWidth = 10;
+            var selectible = hit.collider.GetComponent<Selectible>();
+            if(selectible != null)
+            {
+                if(selected_obj != null)
+                {
+                    selected_obj.UnSelect();
+                }
+                selectible.Select();
+                selected_obj = selectible;
+            }
+            else
+            {
+                if (selected_obj != null)
+                {
+                    selected_obj.UnSelect();
+                }
+                selected_obj = null;
+            }
 
 
         }
