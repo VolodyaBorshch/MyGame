@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Selectible : MonoBehaviour
 {
-    public Outline outline;
+    private Outline outline;
     // Start is called before the first frame update
    
     private void OnEnable()
