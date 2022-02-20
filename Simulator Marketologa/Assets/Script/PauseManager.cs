@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
+    [SerializeField] GameObject _pauseMenu;
+
     // Start is called before the first frame update
     public bool PauseGame;
     public GameObject pauseGameMenu;
 
+    WindowManager windowManager;
 
-    // Update is called once per frame
-    void Update()
+	private void Awake()
+	{
+        windowManager = FindObjectOfType<WindowManager>();
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -28,13 +37,12 @@ public class PauseManager : MonoBehaviour
     
     public void Resume()
     {
-        pauseGameMenu.SetActive(false);
+        windowManager.OpenWindow(_pauseMenu);
         Time.timeScale = 1f;
         PauseGame = false;
     }
     public void Pause()
     {
-        pauseGameMenu.SetActive(true);
         Time.timeScale = 0f;
         PauseGame = true;
     }

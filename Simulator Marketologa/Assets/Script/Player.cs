@@ -5,8 +5,15 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
+    WindowManager _windowManager;
 
-    public GameObject WindowNote;
+	private void Awake()
+	{
+        _windowManager = FindObjectOfType<WindowManager>();
+	}
+
+
+	public GameObject WindowNote;
 
     public Selectible selected_obj;   
 
@@ -63,9 +70,6 @@ public class Player : MonoBehaviour
     }
     public void OpenWindowNote()
     {
-
-        WindowNote.SetActive(true);
-        print("Active");
-
+        _windowManager.OpenWindow(WindowNote);
     }
 }

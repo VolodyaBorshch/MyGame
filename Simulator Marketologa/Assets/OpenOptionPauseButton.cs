@@ -7,16 +7,17 @@ public class OpenOptionPauseButton : MonoBehaviour
     public GameObject OpenOption;
     public GameObject CloseOption;
 
-    void Start()
+	void Start()
     {
         
     }
+
     // Update is called once per frame
     void Update()
     {
         OpenWindowNote();
-
     }
+
     public void OpenWindowNote()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -28,8 +29,8 @@ public class OpenOptionPauseButton : MonoBehaviour
         {
             CloseWindowNote();
         }
-
     }
+
     public void CloseWindowNote()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
