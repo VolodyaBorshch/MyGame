@@ -11,33 +11,11 @@ public class OnComputer : MonoBehaviour
     public GameObject WindowNote;
 
     public GameObject clouseButt;
-    void Start()
-    {
-        //canvas = GetComponent<Canvas>();
+
+
+	private void OnMouseDown()
+	{
+        WindowNote.SetActive(true);
+        
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-           
-                OpenWindowNote();
-
-           
-            
-        }
-
-    }
-
-    public void OpenWindowNote()
-    {
-        WindowNote.SetActive(true) ;
-        print("Active");
-
-    }
-
-    public void onCLick()
-    {
-
-    }
-    
 }
