@@ -15,7 +15,9 @@ public class Player : MonoBehaviour
 
 	public GameObject WindowNote;
 
-    public Selectible selected_obj;   
+    public Selectible selected_obj;
+
+    MoneySystem youMoney;
 
     
     void Update()

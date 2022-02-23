@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
 {
     // Start is called before the first frame update
     public int level;
+    public int maxLevel=50;
     public float CurrentXp;
     public float requiredXp;
 
@@ -44,9 +45,13 @@ public class Level : MonoBehaviour
     {
         UpdateXpUI();
         if (Input.GetKeyDown(KeyCode.Space))
-            GainExperienceFlatRate(20);
-        if(CurrentXp> requiredXp) { }
-            LevelUp();
+            GainExperienceFlatRate(50);
+       
+            if (CurrentXp > requiredXp )
+            {
+                LevelUp();
+            }
+           
         
     }
 
@@ -116,5 +121,16 @@ public class Level : MonoBehaviour
             return solveForRequiredXp / 4;
             
         
+    }
+
+    public void MaxLevel()
+    {
+        if (level >= maxLevel)
+        {
+            LevelText.text = "Max lvl";
+            frontXPBar.fillAmount = 0f;
+            backXpBar.fillAmount = 0f;
+            
+        }
     }
 }
