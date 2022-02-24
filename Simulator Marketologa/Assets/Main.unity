@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 65615023}
   - component: {fileID: 65615025}
   m_Layer: 5
-  m_Name: SearchClients
+  m_Name: CourceWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
